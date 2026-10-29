@@ -1,0 +1,8 @@
+<additional>
+  <vTypeDistribution id="india_mix">
+    <vType id="two_wheeler" vClass="motorcycle" length="2.0" width="0.8" minGap="1.0" maxSpeed="16.7" accel="3.0" decel="5.0" sigma="0.6" probability="0.55"/>
+    <vType id="car" vClass="passenger" length="4.3" minGap="2.0" maxSpeed="16.7" sigma="0.5" probability="0.28"/>
+    <vType id="auto_rickshaw" vClass="taxi" length="2.8" width="1.3" minGap="1.2" maxSpeed="12.5" accel="1.5" sigma="0.6" probability="0.12"/>
+    <vType id="bus" vClass="bus" length="11.0" minGap="2.5" maxSpeed="13.9" accel="1.0" decel="3.5" probability="0.05"/>
+  </vTypeDistribution>
+</additional>

@@ -1,0 +1,14 @@
+numpy
+pandas
+pyyaml
+h5py
+tables
+pyspark>=3.5        # needs Java 17+ installed
+xgboost>=2.0
+tensorflow-cpu>=2.15  # or tensorflow
+scikit-learn
+matplotlib
+eclipse-sumo>=1.20  # SUMO binaries via pip (or install SUMO and set SUMO_HOME)
+traci
+sumolib
+streamlit

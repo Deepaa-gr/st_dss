@@ -1,0 +1,196 @@
+16:05:40 === ST-DSS stage=sim quick=True ===
+16:05:48 [osm] downloading erode roads from overpass-api.de ...
+16:06:26 [osm] saved C:\Users\Deepa_Janani\Downloads\st_dss_project\st_dss\data\osm\erode.osm (0.4 MB)
+16:06:29 [osm] SUMO network written: C:\Users\Deepa_Janani\Downloads\st_dss_project\st_dss\outputs_erode\sim\erode.net.xml
+16:09:48 [sim] network=erode.net.xml edges=3031 incident edges=['Erode - Dharapuram Road (507741065#6)', 'EVN Road (-1285929487#0)']
+17:25:22 === ST-DSS stage=sim quick=True ===
+17:28:15 [sim] network=erode.net.xml edges=3031 incident edges=['Erode - Dharapuram Road (507741065#6)', 'EVN Road (-1285929487#0)']
+17:45:54 [sim] edge forecaster trained: {'samples': 975982, 'holdout_MAE_ratio': 0.08759818410268946, 'persistence_MAE_ratio': 0.10245221264056151}
+17:45:55 [sim] 30 test runs on 8 worker(s)
+17:55:15   [1/30] blockage     seed=1 NoGuidance         delay=3987 rec=16.5min refresh=0 (550s)
+17:55:24   [2/30] blockage     seed=1 B1 Fixed+TT        delay=4731 rec=24.0min refresh=18 (562s)
+17:55:44   [3/30] blockage     seed=1 RIAPR+Recovery     delay=3509 rec=0.0min refresh=10 (576s)
+17:56:01   [4/30] blockage     seed=2 NoGuidance         delay=4304 rec=15.0min refresh=0 (597s)
+17:56:16   [5/30] blockage     seed=1 B3 Age+Recovery    delay=4241 rec=0.0min refresh=9 (611s)
+17:56:23   [6/30] blockage     seed=1 B2 Fixed+Recovery  delay=3695 rec=0.0min refresh=18 (616s)
+17:57:47   [7/30] blockage     seed=2 B1 Fixed+TT        delay=5804 rec=39.0min refresh=18 (702s)
+17:59:11   [8/30] blockage     seed=2 B2 Fixed+Recovery  delay=4169 rec=10.5min refresh=18 (786s)
+18:16:26   [9/30] lane_closure seed=1 NoGuidance         delay=5683 rec=39.0min refresh=0 (1242s)
+18:16:55   [10/30] lane_closure seed=1 B2 Fixed+Recovery  delay=4556 rec=18.0min refresh=18 (1239s)
+18:17:11   [11/30] lane_closure seed=1 RIAPR+Recovery     delay=3516 rec=0.0min refresh=8 (1163s)
+18:18:17   [12/30] blockage     seed=2 RIAPR+Recovery     delay=4519 rec=0.0min refresh=13 (1372s)
+18:18:45   [13/30] blockage     seed=2 B3 Age+Recovery    delay=4335 rec=7.5min refresh=9 (1409s)
+18:19:41   [14/30] lane_closure seed=2 NoGuidance         delay=5468 rec=27.0min refresh=0 (1230s)
+18:19:49   [15/30] lane_closure seed=1 B3 Age+Recovery    delay=5545 rec=19.5min refresh=9 (1405s)
+18:21:09   [16/30] lane_closure seed=1 B1 Fixed+TT        delay=6370 rec=39.0min refresh=18 (1508s)
+18:37:17   [17/30] demand_surge seed=1 NoGuidance         delay=5349 rec=24.0min refresh=0 (1111s)
+18:37:53   [18/30] lane_closure seed=2 B3 Age+Recovery    delay=4437 rec=10.5min refresh=9 (1240s)
+18:38:54   [19/30] lane_closure seed=2 B2 Fixed+Recovery  delay=4724 rec=18.0min refresh=18 (1317s)
+18:39:18   [20/30] demand_surge seed=1 B1 Fixed+TT        delay=5812 rec=39.0min refresh=18 (1176s)
+18:39:41   [21/30] demand_surge seed=1 B2 Fixed+Recovery  delay=6687 rec=34.5min refresh=18 (1191s)
+18:41:33   [22/30] lane_closure seed=2 B1 Fixed+TT        delay=6018 rec=39.0min refresh=18 (1505s)
+18:42:05   [23/30] lane_closure seed=2 RIAPR+Recovery     delay=5889 rec=9.0min refresh=18 (1427s)
+18:46:20   [24/30] demand_surge seed=1 B3 Age+Recovery    delay=5106 rec=19.5min refresh=9 (1510s)
+18:54:32   [25/30] demand_surge seed=2 NoGuidance         delay=6319 rec=27.0min refresh=0 (998s)
+18:55:59   [26/30] demand_surge seed=2 B1 Fixed+TT        delay=4898 rec=9.0min refresh=18 (1024s)
+18:55:59   [27/30] demand_surge seed=2 B2 Fixed+Recovery  delay=5046 rec=9.0min refresh=18 (1001s)
+18:56:26   [28/30] demand_surge seed=1 RIAPR+Recovery     delay=4968 rec=19.5min refresh=6 (1149s)
+18:58:04   [29/30] demand_surge seed=2 B3 Age+Recovery    delay=5972 rec=22.5min refresh=9 (1103s)
+18:58:39   [30/30] demand_surge seed=2 RIAPR+Recovery     delay=5947 rec=13.5min refresh=7 (1025s)
+18:58:40 
+                                recovery_time_min  total_delay_veh_min  refresh_count  decision_latency_ms  forecast_time_s  reroutes  mean_travel_time_s  recovered  teleports  recovery_time_min_std  total_delay_veh_min_std
+scenario     strategy                                                                                                                                                                                                          
+blockage     B1 Fixed+TT                    31.50              5267.59           18.0                25.41             1.11     689.5              235.63        0.5       35.5                  10.61                   759.26
+             B2 Fixed+Recovery               5.25              3932.40           18.0                22.92             1.11     474.0              220.42        1.0       23.5                   7.42                   335.05
+             B3 Age+Recovery                 3.75              4287.89            9.0                23.59             1.16     472.5              225.60        1.0       22.5                   5.30                    66.37
+             NoGuidance                     15.75              4145.41            0.0                 0.00             0.00       0.0              219.94        1.0       21.0                   1.06                   224.20
+             RIAPR+Recovery                  0.00              4014.09           11.5                28.43             1.35     596.0              223.15        1.0       18.0                   0.00                   713.69
+demand_surge B1 Fixed+TT                    24.00              5354.94           18.0                47.59             1.98     988.0              236.52        0.5       27.0                  21.21                   646.74
+             B2 Fixed+Recovery              21.75              5866.65           18.0                46.96             1.94     752.5              251.42        1.0       32.0                  18.03                  1159.96
+             B3 Age+Recovery                21.00              5538.96            9.0               188.64            10.50     703.0              245.16        1.0       24.0                   2.12                   612.88
+             NoGuidance                     25.50              5833.63            0.0                 0.00             0.00       0.0              245.60        1.0        6.5                   2.12                   686.00
+             RIAPR+Recovery                 16.50              5457.34            6.5                16.97             0.84     881.5              246.19        1.0       20.5                   4.24                   691.78
+lane_closure B1 Fixed+TT                    39.00              6193.93           18.0                62.76             3.47     678.0              247.14        0.0       48.0                   0.00                   248.67
+             B2 Fixed+Recovery              18.00              4640.20           18.0                58.76             2.67     431.5              230.45        1.0       32.0                   0.00                   118.70
+             B3 Age+Recovery                15.00              4990.97            9.0                35.10             1.62     484.0              235.70        1.0       37.5                   6.36                   784.03
+             NoGuidance                     33.00              5575.28            0.0                 0.00             0.00       0.0              239.86        0.5       44.5                   8.49                   152.09
+             RIAPR+Recovery                  4.50              4702.34           13.0                37.55             1.72     839.5              236.14        1.0       31.0                   6.36                  1678.44
+18:58:40 
+        scenario           baseline               metric  riapr_vs_baseline_pct  paired_seeds_riapr_better  n_seeds
+0       blockage        B1 Fixed+TT    recovery_time_min                  100.0                          2        2
+1       blockage        B1 Fixed+TT  total_delay_veh_min                   23.8                          2        2
+2       blockage        B1 Fixed+TT        refresh_count                   36.1                          2        2
+3       blockage  B2 Fixed+Recovery    recovery_time_min                  100.0                          1        2
+4       blockage  B2 Fixed+Recovery  total_delay_veh_min                   -2.1                          1        2
+5       blockage  B2 Fixed+Recovery        refresh_count                   36.1                          2        2
+6       blockage    B3 Age+Recovery    recovery_time_min                  100.0                          1        2
+7       blockage    B3 Age+Recovery  total_delay_veh_min                    6.4                          1        2
+8       blockage    B3 Age+Recovery        refresh_count                  -27.8                          0        2
+9   demand_surge        B1 Fixed+TT    recovery_time_min                   31.2                          1        2
+10  demand_surge        B1 Fixed+TT  total_delay_veh_min                   -1.9                          1        2
+11  demand_surge        B1 Fixed+TT        refresh_count                   63.9                          2        2
+12  demand_surge  B2 Fixed+Recovery    recovery_time_min                   24.1                          1        2
+13  demand_surge  B2 Fixed+Recovery  total_delay_veh_min                    7.0                          1        2
+14  demand_surge  B2 Fixed+Recovery        refresh_count                   63.9                          2        2
+15  demand_surge    B3 Age+Recovery    recovery_time_min                   21.4                          1        2
+16  demand_surge    B3 Age+Recovery  total_delay_veh_min                    1.5                          2        2
+17  demand_surge    B3 Age+Recovery        refresh_count                   27.8                          2        2
+18  lane_closure        B1 Fixed+TT    recovery_time_min                   88.5                          2        2
+19  lane_closure        B1 Fixed+TT  total_delay_veh_min                   24.1                          2        2
+20  lane_closure        B1 Fixed+TT        refresh_count                   27.8                          1        2
+21  lane_closure  B2 Fixed+Recovery    recovery_time_min                   75.0                          2        2
+22  lane_closure  B2 Fixed+Recovery  total_delay_veh_min                   -1.3                          1        2
+23  lane_closure  B2 Fixed+Recovery        refresh_count                   27.8                          1        2
+24  lane_closure    B3 Age+Recovery    recovery_time_min                   70.0                          2        2
+25  lane_closure    B3 Age+Recovery  total_delay_veh_min                    5.8                          1        2
+26  lane_closure    B3 Age+Recovery        refresh_count                  -44.4                          1        2
+18:58:49 done.
+23:55:03 === ST-DSS stage=forecast quick=True ===
+23:59:54 [sim] network=erode.net.xml edges=3031 incident edges=['Erode - Dharapuram Road (507741065#6)', 'EVN Road (-1285929487#0)']
+00:16:36 [forecast] road-speed forecasting on held-out simulation:
+                  model  MAE_kmh  RMSE_kmh  MAE_pct_of_free_speed  test_samples  horizon_min
+                   LSTM     4.05      8.22                   6.70        484960          6.0
+                XGBoost     4.77      7.56                   8.11        484960          6.0
+Moving average (last 5)     5.12      8.52                   8.58        484960          6.0
+Persistence (no change)     5.60     10.67                   9.40        484960          6.0
+00:17:45 [sim] edge forecaster trained: {'samples': 975982, 'holdout_MAE_ratio': 0.08759818410268946, 'persistence_MAE_ratio': 0.10245221264056151}
+00:17:45 done.
+11:15:43 === ST-DSS stage=forecast quick=True ===
+11:15:53 [osm] SUMO network written: C:\Users\Deepa_Janani\Downloads\st_dss_project\st_dss\outputs_erode\sim\erode_speed0.5.net.xml
+11:22:41 [sim] network=erode_speed0.5.net.xml edges=3031 incident edges=['EVN Road (-1285929487#0)', 'Erode - Dharapuram Road (507741065#6)']
+11:53:07 [forecast] road-speed forecasting on held-out simulation:
+                  model  MAE_kmh  RMSE_kmh  MAE_pct_of_free_speed  test_samples  horizon_min
+                   LSTM     1.19      2.62                   3.94        503146          6.0
+                XGBoost     1.40      2.42                   4.82        503146          6.0
+Moving average (last 5)     1.53      2.73                   5.23        503146          6.0
+Persistence (no change)     1.71      3.35                   5.82        503146          6.0
+11:59:15 [sim] edge forecaster trained: {'samples': 1042664, 'holdout_MAE_ratio': 0.05090765025036655, 'persistence_MAE_ratio': 0.062035471295100494}
+11:59:15 done.
+12:01:48 === ST-DSS stage=sim quick=True ===
+12:04:43 [sim] network=erode_speed0.5.net.xml edges=3031 incident edges=['EVN Road (-1285929487#0)', 'Erode - Dharapuram Road (507741065#6)']
+12:18:16 [forecast] road-speed forecasting on held-out simulation:
+                  model  MAE_kmh  RMSE_kmh  MAE_pct_of_free_speed  test_samples  horizon_min
+                   LSTM     1.21      2.68                   3.99        503146          6.0
+                XGBoost     1.40      2.42                   4.82        503146          6.0
+Moving average (last 5)     1.53      2.73                   5.23        503146          6.0
+Persistence (no change)     1.71      3.35                   5.82        503146          6.0
+12:19:45 [sim] edge forecaster trained: {'samples': 1042664, 'holdout_MAE_ratio': 0.05090765025036655, 'persistence_MAE_ratio': 0.062035471295100494}
+12:19:45 [sim] 30 test runs on 8 worker(s)
+12:29:32   [1/30] blockage     seed=1 NoGuidance         delay=4463 rec=19.5min refresh=0 (570s)
+12:33:50   [2/30] blockage     seed=1 B3 Age+Recovery    delay=4848 rec=18.0min refresh=9 (829s)
+12:34:39   [3/30] blockage     seed=2 NoGuidance         delay=7566 rec=39.0min refresh=0 (877s)
+12:35:05   [4/30] blockage     seed=1 B1 Fixed+TT        delay=6772 rec=19.5min refresh=18 (903s)
+12:35:11   [5/30] blockage     seed=1 RIAPR+Recovery     delay=4683 rec=19.5min refresh=10 (910s)
+12:35:12   [6/30] blockage     seed=2 B1 Fixed+TT        delay=6160 rec=31.5min refresh=18 (911s)
+12:35:14   [7/30] blockage     seed=1 B2 Fixed+Recovery  delay=4512 rec=18.0min refresh=18 (913s)
+12:35:16   [8/30] blockage     seed=2 B2 Fixed+Recovery  delay=5146 rec=16.5min refresh=18 (915s)
+13:10:20   [9/30] blockage     seed=2 B3 Age+Recovery    delay=5635 rec=33.0min refresh=9 (2447s)
+13:10:32   [10/30] lane_closure seed=1 B2 Fixed+Recovery  delay=4162 rec=19.5min refresh=18 (2120s)
+13:10:57   [11/30] blockage     seed=2 RIAPR+Recovery     delay=4781 rec=21.0min refresh=13 (2226s)
+13:11:10   [12/30] lane_closure seed=1 NoGuidance         delay=8384 rec=31.5min refresh=0 (2190s)
+13:12:03   [13/30] lane_closure seed=2 NoGuidance         delay=8879 rec=39.0min refresh=0 (2206s)
+13:12:11   [14/30] lane_closure seed=1 B1 Fixed+TT        delay=6763 rec=28.5min refresh=18 (2225s)
+13:12:16   [15/30] lane_closure seed=1 B3 Age+Recovery    delay=5709 rec=19.5min refresh=9 (2223s)
+13:12:18   [16/30] lane_closure seed=1 RIAPR+Recovery     delay=4752 rec=28.5min refresh=8 (2223s)
+13:34:40   [17/30] lane_closure seed=2 RIAPR+Recovery     delay=3749 rec=13.5min refresh=7 (1409s)
+13:36:09   [18/30] lane_closure seed=2 B1 Fixed+TT        delay=6307 rec=24.0min refresh=18 (1548s)
+13:36:28   [19/30] lane_closure seed=2 B2 Fixed+Recovery  delay=5359 rec=21.0min refresh=18 (1555s)
+13:36:33   [20/30] demand_surge seed=1 B1 Fixed+TT        delay=3660 rec=0.0min refresh=18 (1461s)
+13:36:50   [21/30] lane_closure seed=2 B3 Age+Recovery    delay=6004 rec=27.0min refresh=9 (1552s)
+13:37:48   [22/30] demand_surge seed=1 B3 Age+Recovery    delay=6651 rec=28.5min refresh=9 (1530s)
+13:38:57   [23/30] demand_surge seed=1 B2 Fixed+Recovery  delay=5831 rec=25.5min refresh=18 (1600s)
+13:39:07   [24/30] demand_surge seed=1 NoGuidance         delay=35179 rec=39.0min refresh=0 (1623s)
+13:49:39   [25/30] demand_surge seed=1 RIAPR+Recovery     delay=6658 rec=31.5min refresh=10 (899s)
+13:50:03   [26/30] demand_surge seed=2 B2 Fixed+Recovery  delay=5653 rec=28.5min refresh=18 (810s)
+13:51:27   [27/30] demand_surge seed=2 RIAPR+Recovery     delay=6811 rec=33.0min refresh=14 (818s)
+13:51:49   [28/30] demand_surge seed=2 B3 Age+Recovery    delay=6117 rec=28.5min refresh=9 (899s)
+13:52:01   [29/30] demand_surge seed=2 B1 Fixed+TT        delay=6133 rec=27.0min refresh=18 (933s)
+13:52:01   [30/30] demand_surge seed=2 NoGuidance         delay=37293 rec=39.0min refresh=0 (952s)
+13:52:03 
+                                recovery_time_min  total_delay_veh_min  refresh_count  decision_latency_ms  forecast_time_s  reroutes  mean_travel_time_s  recovered  teleports  recovery_time_min_std  total_delay_veh_min_std
+scenario     strategy                                                                                                                                                                                                          
+blockage     B1 Fixed+TT                    25.50              6465.70           18.0                32.76             1.79     696.0              330.96        1.0       36.0                   8.49                   432.70
+             B2 Fixed+Recovery              17.25              4829.09           18.0                36.13             1.99     326.0              315.94        1.0       22.5                   1.06                   448.80
+             B3 Age+Recovery                25.50              5241.58            9.0                26.66             1.40     390.0              323.60        1.0       21.0                  10.61                   556.48
+             NoGuidance                     29.25              6014.08            0.0                 0.00             0.00       0.0              325.80        0.5       25.0                  13.79                  2194.14
+             RIAPR+Recovery                 20.25              4731.94           11.5                28.63             1.42     320.5              314.10        1.0       20.0                   1.06                    69.62
+demand_surge B1 Fixed+TT                    13.50              4896.27           18.0                35.02             1.66     806.5              306.79        1.0        8.5                  19.09                  1748.73
+             B2 Fixed+Recovery              27.00              5741.85           18.0                33.85             1.65     660.0              341.06        1.0       13.5                   2.12                   125.44
+             B3 Age+Recovery                28.50              6384.06            9.0                53.62             2.38     776.0              349.68        1.0       19.5                   0.00                   377.61
+             NoGuidance                     39.00             36235.70            0.0                 0.00             0.00       0.0              686.56        0.0      174.5                   0.00                  1494.74
+             RIAPR+Recovery                 32.25              6734.43           12.0                23.28             1.03     561.5              346.26        1.0       16.0                   1.06                   107.78
+lane_closure B1 Fixed+TT                    26.25              6535.09           18.0                46.19             2.54     710.0              331.49        1.0       37.5                   3.18                   322.06
+             B2 Fixed+Recovery              20.25              4760.27           18.0                45.70             2.09     330.5              315.92        1.0       22.5                   1.06                   846.09
+             B3 Age+Recovery                23.25              5856.23            9.0                25.11             1.35     391.5              332.61        1.0       33.0                   5.30                   208.84
+             NoGuidance                     35.25              8631.43            0.0                 0.00             0.00       0.0              364.53        0.5       69.5                   5.30                   350.33
+             RIAPR+Recovery                 21.00              4250.68            7.5                87.74             3.67     406.0              309.47        1.0       19.5                  10.61                   708.87
+13:52:03 
+        scenario           baseline               metric  riapr_vs_baseline_pct  paired_seeds_riapr_better  n_seeds
+0       blockage        B1 Fixed+TT    recovery_time_min                   20.6                          1        2
+1       blockage        B1 Fixed+TT  total_delay_veh_min                   26.8                          2        2
+2       blockage        B1 Fixed+TT        refresh_count                   36.1                          2        2
+3       blockage  B2 Fixed+Recovery    recovery_time_min                  -17.4                          0        2
+4       blockage  B2 Fixed+Recovery  total_delay_veh_min                    2.0                          1        2
+5       blockage  B2 Fixed+Recovery        refresh_count                   36.1                          2        2
+6       blockage    B3 Age+Recovery    recovery_time_min                   20.6                          1        2
+7       blockage    B3 Age+Recovery  total_delay_veh_min                    9.7                          2        2
+8       blockage    B3 Age+Recovery        refresh_count                  -27.8                          0        2
+9   demand_surge        B1 Fixed+TT    recovery_time_min                 -138.9                          0        2
+10  demand_surge        B1 Fixed+TT  total_delay_veh_min                  -37.5                          0        2
+11  demand_surge        B1 Fixed+TT        refresh_count                   33.3                          2        2
+12  demand_surge  B2 Fixed+Recovery    recovery_time_min                  -19.4                          0        2
+13  demand_surge  B2 Fixed+Recovery  total_delay_veh_min                  -17.3                          0        2
+14  demand_surge  B2 Fixed+Recovery        refresh_count                   33.3                          2        2
+15  demand_surge    B3 Age+Recovery    recovery_time_min                  -13.2                          0        2
+16  demand_surge    B3 Age+Recovery  total_delay_veh_min                   -5.5                          0        2
+17  demand_surge    B3 Age+Recovery        refresh_count                  -33.3                          0        2
+18  lane_closure        B1 Fixed+TT    recovery_time_min                   20.0                          1        2
+19  lane_closure        B1 Fixed+TT  total_delay_veh_min                   35.0                          2        2
+20  lane_closure        B1 Fixed+TT        refresh_count                   58.3                          2        2
+21  lane_closure  B2 Fixed+Recovery    recovery_time_min                   -3.7                          1        2
+22  lane_closure  B2 Fixed+Recovery  total_delay_veh_min                   10.7                          1        2
+23  lane_closure  B2 Fixed+Recovery        refresh_count                   58.3                          2        2
+24  lane_closure    B3 Age+Recovery    recovery_time_min                    9.7                          1        2
+25  lane_closure    B3 Age+Recovery  total_delay_veh_min                   27.4                          2        2
+26  lane_closure    B3 Age+Recovery        refresh_count                   16.7                          2        2
+13:52:13 done.

@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+*.pyc
+data/metr-la.h5
+outputs*/data/metr_la_long.parquet

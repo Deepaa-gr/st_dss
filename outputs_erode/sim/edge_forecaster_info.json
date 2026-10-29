@@ -1,0 +1,5 @@
+{
+  "samples": 1042664,
+  "holdout_MAE_ratio": 0.05090765025036655,
+  "persistence_MAE_ratio": 0.062035471295100494
+}

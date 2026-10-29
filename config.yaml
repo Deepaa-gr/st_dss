@@ -1,0 +1,85 @@
+# ST-DSS configuration — every threshold used in the experiments lives here.
+seed: 42
+output_dir: outputs
+
+# ---------------------------------------------------------------- data
+data:
+  # Put the real METR-LA file here (from the DCRNN release: metr-la.h5).
+  # If it is missing, a synthetic METR-LA-shaped dataset is generated so the
+  # pipeline can be tested end-to-end. Synthetic results are NOT research results.
+  metr_la_path: data/metr-la.h5
+  allow_synthetic: true
+  max_sensors: 207          # 207 = full METR-LA; reduce for quick tests
+  max_days: null            # null = all ~119 days; e.g. 14 for quick tests
+  n_lags: 12                # 12 x 5 min = 1 hour of history
+  horizons: [1, 3, 6]       # steps ahead: 5, 15, 30 min
+  split: [0.7, 0.1, 0.2]    # chronological train / val / test
+
+# ---------------------------------------------------------------- models
+models:
+  xgboost:
+    n_estimators: 300
+    max_depth: 8
+    learning_rate: 0.08
+    subsample: 0.8
+    colsample_bytree: 0.8
+    max_train_rows: 1500000   # random sample of training rows (memory)
+  lstm:
+    units: 64
+    epochs: 10
+    batch_size: 512
+    max_train_rows: 600000
+
+# ---------------------------------------------------------------- simulation
+sim:
+  grid_number: 6            # 6x6 junction grid (OpenStreetMap net can be swapped in: sim.net_file)
+  grid_length: 200
+  lanes: 2
+  net_file: null            # e.g. data/osm.net.xml to use an OSM-based network
+  sim_end: 3600             # s, observation window
+  demand_end: 3600
+  demand_period: 0.9        # s between generated trips (lower = heavier)
+  step_s: 90                # observation / decision / rerouting period (= signal cycle, avoids aliasing)
+  horizon_steps: 4          # forecast horizon in decision steps (4 x 90 s = 6 min)
+  history_steps: 5
+  incident_start: 1260
+  incident_duration: 900
+  incident_edges: auto      # auto = most-used edges in a calibration run, or a list
+  n_incident_edges: 2
+  surge_rate_per_min: 30    # demand_surge: extra vehicles/min routed through the incident edges
+  time_to_teleport: 300
+  recovery_fraction: 0.9    # recovery when mean speed >= 0.9 x pre-incident level
+  recovery_sustain_steps: 2
+  calibration_seeds: [101, 102, 103]
+  validation_seeds: [201, 202]
+  test_seeds: [1, 2, 3]
+  scenarios: [blockage, lane_closure, demand_surge]
+
+# ---------------------------------------------------------------- real cities (--city)
+# Used only with: python run_pipeline.py --stage sim --city <name>
+city_sim:
+  city_half_km: 1.3         # downloads a 2.6 km x 2.6 km box around the city centre
+  vehicle_mix: india        # 55% two-wheelers, 28% cars, 12% autos, 5% buses
+  speed_factor: 0.5         # OSM default speeds x 0.5: main roads 50 km/h, streets 25 km/h (Indian city centre)
+  demand_period: 0.8        # tune per city if the network gridlocks (higher = lighter)
+  min_trip_distance: 500
+  n_incident_edges: 2
+
+routing:
+  reroute_trigger: 0.4      # reroute vehicles whose remaining route has an edge forecast below 0.4 x free speed
+  max_reroutes_per_step: 150
+  min_reroute_gap_s: 180
+  recovery_alpha: 1.0       # penalty on forecast speed drop
+  recovery_gamma: 2.0       # penalty on assigned load / capacity (limits redistribution)
+
+refresh:
+  fixed_interval_s: 180     # Baseline 1 & 2 (every 2 decision steps)
+  age_threshold_s: 360      # Baseline 3: refresh when forecast age reaches the horizon
+  riapr:
+    w_age: 0.3
+    w_dev: 1.0
+    w_impact: 1.0
+    congestion_boost: 2.0   # extra weight for congested edges (recovery relevance)
+    theta: 1.1              # chosen by --sweep on validation seeds (quick run); re-tune for your final setup
+    min_age_s: 90
+    max_age_s: 720
